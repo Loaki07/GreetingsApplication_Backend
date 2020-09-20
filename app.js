@@ -2,12 +2,14 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const homepageRoute = require("./routes/homepage");
+const usersRoute = require("./routes/users");
 const mongoose = require("mongoose");
 require("dotenv/config");
 
 // Middleware
 app.use(bodyParser.json());
 app.use("/", homepageRoute);
+app.use("/users", usersRoute);
 
 // MongoDB Connection
 mongoose
