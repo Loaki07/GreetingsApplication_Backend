@@ -7,7 +7,7 @@ class GreetingController {
       const result = await Greeting.find();
       res.send(result);
     } catch (error) {
-      console.log(error);
+      res.status(500).send("Error", error.message);
     }
   };
 
