@@ -11,4 +11,6 @@ router.get("/:id", GreetingController.findGreetingById);
 
 router.put("/:id", GreetingController.updateGreeting);
 
+router.delete("/:id", GreetingController.deleteGreeting);
+
 module.exports = router;

@@ -55,6 +55,10 @@ class GreetingController {
     }
   };
 
+  deleteGreeting = async (req, res) => {
+    await Greeting.deleteOne({ _id: req.params.id });
+  };
+
   validateMsg = (message) => {
     const schema = Joi.object({
       firstName: Joi.string().min(3).required(),
