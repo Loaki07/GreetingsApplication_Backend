@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const homepageRoute = require("./routes/homepage");
 const usersRoute = require("./routes/users");
+const servicesRoute = require("./routes/services");
 const mongoose = require("mongoose");
 require("dotenv/config");
 
@@ -10,6 +11,7 @@ require("dotenv/config");
 app.use(bodyParser.json());
 app.use("/", homepageRoute);
 app.use("/users", usersRoute);
+app.use("/services", servicesRoute);
 
 // MongoDB Connection
 mongoose
