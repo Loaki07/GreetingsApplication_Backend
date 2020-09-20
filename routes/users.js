@@ -9,4 +9,6 @@ router.post("/", GreetingController.uploadNewGreeting);
 
 router.get("/:id", GreetingController.findGreetingById);
 
+router.put("/:id", GreetingController.updateGreeting);
+
 module.exports = router;

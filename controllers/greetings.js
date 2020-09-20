@@ -38,6 +38,23 @@ class GreetingController {
     }
   };
 
+  updateGreeting = async (req, res) => {
+    try {
+      const updatedGreeting = await Greeting.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set: {
+            greeting: req.body.greeting,
+          },
+        },
+        { new: true }
+      );
+      res.send(updatedGreeting);
+    } catch (error) {
+      res.status(500).send("Error", error.message);
+    }
+  };
+
   validateMsg = (message) => {
     const schema = Joi.object({
       firstName: Joi.string().min(3).required(),
