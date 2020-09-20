@@ -7,4 +7,6 @@ router.get("/", GreetingController.displayAllGreetings);
 
 router.post("/", GreetingController.uploadNewGreeting);
 
+router.get("/:id", GreetingController.findGreetingById);
+
 module.exports = router;

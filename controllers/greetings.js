@@ -27,7 +27,16 @@ class GreetingController {
     } catch (error) {
       res.status(500).send("Error", error.message);
     }
-  }; 
+  };
+
+  findGreetingById = async (req, res) => {
+    try {
+      const greeting = await Greeting.findById(req.params.id);
+      res.send(greeting);
+    } catch (error) {
+      res.status(500).send("Error", error.message);
+    }
+  };
 
   validateMsg = (message) => {
     const schema = Joi.object({
