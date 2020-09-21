@@ -10,3 +10,5 @@ Packages Used:
 3. Joi for input validation
 4. Body-Parser to parse req.body to Json Object
 5. Express Router for handling routes
+6. Node run time environment for javascript
+7. MongoDB for Database Cluster & Mongoose to handle mongoDB
