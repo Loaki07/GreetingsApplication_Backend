@@ -21,7 +21,6 @@ const usersRoute = require("./routes/users");
 const servicesRoute = require("./routes/services");
 require("dotenv/config");
 require("./config/db");
-require("./config/middlewares");
 
 // Middleware
 app.use(bodyParser.json());
