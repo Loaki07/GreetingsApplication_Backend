@@ -1,0 +1,1 @@
+exports.connectionUrl = "mongodb://localhost:27017/GreetingsApp";
