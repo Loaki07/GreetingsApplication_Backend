@@ -3,6 +3,8 @@ const router = express.Router();
 const controller = require("../controllers/service");
 const ServiceController = new controller();
 
-router.get("/", ServiceController.displayService);
+router.get("/", ServiceController.displayWelcomeMessage);
+
+router.get("/:id", ServiceController.displayUserGreetings);
 
 module.exports = router;
