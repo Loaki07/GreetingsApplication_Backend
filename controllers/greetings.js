@@ -1,5 +1,5 @@
-const Greeting = require("../models/Greeting");
-const Joi = require("joi");
+const Greeting = require('../models/Greeting');
+const Joi = require('joi');
 
 class GreetingController {
   displayAllGreetings = async (req, res) => {
@@ -7,7 +7,7 @@ class GreetingController {
       const result = await Greeting.find();
       res.send(result);
     } catch (error) {
-      res.status(500).send("Error", error.message);
+      res.status(500).send('Error', error.message);
     }
   };
 
@@ -25,7 +25,7 @@ class GreetingController {
       const result = await message.save();
       res.send(result);
     } catch (error) {
-      res.status(500).send("Error", error.message);
+      res.status(500).send('Error', error.message);
     }
   };
 
@@ -34,7 +34,7 @@ class GreetingController {
       const greeting = await Greeting.findById(req.params.id);
       res.send(greeting);
     } catch (error) {
-      res.status(500).send("Error", error.message);
+      res.status(500).send('Error', error.message);
     }
   };
 
@@ -44,6 +44,8 @@ class GreetingController {
         req.params.id,
         {
           $set: {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             greeting: req.body.greeting,
           },
         },
@@ -51,7 +53,7 @@ class GreetingController {
       );
       res.send(updatedGreeting);
     } catch (error) {
-      res.status(500).send("Error", error.message);
+      res.status(500).send('Error', error.message);
     }
   };
 
