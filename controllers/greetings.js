@@ -49,7 +49,7 @@ class GreetingController {
             greeting: req.body.greeting,
           },
         },
-        { new: true }
+        { new: true, useFindAndModify: false }
       );
       res.send(updatedGreeting);
     } catch (error) {
@@ -59,6 +59,7 @@ class GreetingController {
 
   deleteGreeting = async (req, res) => {
     await Greeting.deleteOne({ _id: req.params.id });
+    res.status(500).send('Successfull Deleted User!');
   };
 
   validateMsg = (message) => {
