@@ -59,7 +59,7 @@ class GreetingController {
 
   deleteGreeting = async (req, res) => {
     await Greeting.deleteOne({ _id: req.params.id });
-    res.status(500).send('Successfull Deleted User!');
+    res.status(200).send('Successfull Deleted User!');
   };
 
   validateMsg = (message) => {
